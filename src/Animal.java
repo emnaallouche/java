@@ -11,4 +11,13 @@
      }
      void displayAnimal() {
          System.out.println("Animal: " + name + ", Family: " + family + ", Age: " + age + ", Is Mammal: " + isMammal);
- }}
+ }
+     @Override
+     public String toString() {
+         return "Animal{" +
+                 "family='" + family + '\'' +
+                 ", name='" + name + '\'' +
+                 ", age=" + age +
+                 ", isMammal=" + isMammal +
+                 '}';
+     }}
