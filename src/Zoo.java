@@ -1,11 +1,58 @@
 import java.util.ArrayList;
 
 class Zoo {
-    Animal [] animals;
-    String name;
-    String city;
-    int NBR_CAGES;
-    int nbrAnimals=0;
+    protected Animal [] animals;
+    protected String name;
+    protected String city;
+    protected int NBR_CAGES;
+    protected int nbrAnimals=0;
+
+    public Animal[] getAnimals() {
+        return animals;
+    }
+
+    public void setAnimals(Animal[] animals) {
+        this.animals = animals;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        if (name.isEmpty())
+        {
+            System.out.println("Name cannot be empty");
+        }
+        else {
+            this.name = name;
+        }
+        this.name = name;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public int getNBR_CAGES() {
+        return NBR_CAGES;
+    }
+
+    public void setNBR_CAGES(int NBR_CAGES) {
+        this.NBR_CAGES = NBR_CAGES;
+    }
+
+    public int getNbrAnimals() {
+        return nbrAnimals;
+    }
+
+    public void setNbrAnimals(int nbrAnimals) {
+        this.nbrAnimals = nbrAnimals;
+    }
 
     public Zoo(String name, String city) {
         this.name = name;
