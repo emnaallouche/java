@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package tn.esprit.gestionzoo.main;
 
 class ZooManagement
 {
