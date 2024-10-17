@@ -1,6 +1,6 @@
 package tn.esprit.gestionzoo.entities;
 
-class Zoo {
+public class Zoo {
     private Animal[] animals;
     private String name;
     private String city;
@@ -57,7 +57,7 @@ class Zoo {
         this.animals = new Animal[NBR_CAGES];
     }
 
-    boolean addAnimal(Animal animal) {
+    public boolean addAnimal(Animal animal) {
         if (isZooFull()) {
             System.out.println("Cannot add animal. The zoo is full.");
             return false;
@@ -68,7 +68,7 @@ class Zoo {
         return true;
     }
 
-    void displayAnimals() {
+    public void displayAnimals() {
         for (Animal animal : animals) {
             if (animal != null) {
                 animal.displayAnimal();
@@ -76,7 +76,7 @@ class Zoo {
         }
     }
 
-    int searchAnimal(Animal animal) {
+    public int searchAnimal(Animal animal) {
         for (int i = 0; i < nbrAnimals; i++) {
             if (animals[i].getName().equals(animal.getName())) {
                 return i;
@@ -85,7 +85,7 @@ class Zoo {
         return -1;
     }
 
-    boolean removerAnimal(Animal animal) {
+    public boolean removerAnimal(Animal animal) {
         for (int i = 0; i < nbrAnimals; i++) {
             if (animals[i].getName().equals(animal.getName())) {
                 animals[i] = null;
@@ -96,7 +96,7 @@ class Zoo {
         return false;
     }
 
-    boolean isZooFull() {
+    public boolean isZooFull() {
         return nbrAnimals >= NBR_CAGES;
     }
 
@@ -107,7 +107,7 @@ class Zoo {
         return z2;
     }
 
-    void displayZoo() {
+    public void displayZoo() {
         System.out.println("Zoo Name: " + name + ", City: " + city + ", Number of Cages: " + NBR_CAGES);
     }
 }
