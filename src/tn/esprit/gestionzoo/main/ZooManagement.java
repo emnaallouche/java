@@ -23,17 +23,24 @@ class ZooManagement
         int indexTiger = myZoo.searchAnimal(tiger);
         System.out.println("Index de l'animal 'Tiger': " + indexTiger);
         System.out.println(myZoo);*/
-        Animal animal = new Animal();
-        Aquatic aquatic = new Aquatic();
-        Terrestrial terrestrial = new Terrestrial();
-        Dolphin dolphin = new Dolphin();
-        Penguin penguin = new Penguin();
+
+        Animal animal = new Animal("mer","simba",2,true);
+        Terrestrial terrestrial = new Terrestrial("mer","simba",2,true,4);
+        Dolphin dolphin = new Dolphin("mer","simba",2,true,"mer",80);
+        Penguin penguin = new Penguin("mer","simba",2,true,"glace",10);
+
+
+        myZoo.addAquaticAnimal(dolphin);
+        myZoo.addAquaticAnimal(penguin);
+
+        myZoo.displayAquaticSwims(); // Affiche les nages des animaux aquatiques
+        myZoo.displayNumberOfAquaticsByType();
         System.out.println(animal);
-        System.out.println(aquatic);
+        //System.out.println(aquatic);
         System.out.println(terrestrial);
         System.out.println(dolphin);
         System.out.println(penguin);
-        aquatic.swim();
+        //+aquatic.swim();
         dolphin.swim();
         penguin.swim();
     }
