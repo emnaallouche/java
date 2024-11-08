@@ -31,7 +31,6 @@ class ZooManagement
         System.out.println(myZoo);*/
 
         Animal animal = new Animal("mer","simba",2,true);
-        Terrestrial terrestrial = new Terrestrial("mer","simba",2,true,4);
         Dolphin dolphin = new Dolphin("mer","simba",2,true,"mer",80);
         Penguin penguin = new Penguin("mer","simba",2,true,"glace",10);
 
@@ -43,11 +42,33 @@ class ZooManagement
         myZoo.displayNumberOfAquaticsByType();
         System.out.println(animal);
         //System.out.println(aquatic);
-        System.out.println(terrestrial);
         System.out.println(dolphin);
         System.out.println(penguin);
         //+aquatic.swim();
         dolphin.swim();
         penguin.swim();
+        // Creating an Aquatic animal (Penguin)
+        Penguin penguin1 = new Penguin("Spheniscidae", "Penguin", 5, false, "Antarctic", 50.0f);
+
+        // Displaying penguin info
+        System.out.println(penguin1.toString());
+
+        // Testing swim method
+        penguin.swim();
+
+        // Creating a Terrestrial animal
+        Terrestrial liontest = new Terrestrial();
+        liontest.setNbrLegs(4);
+
+        // Displaying lion info
+        System.out.println("Terrestrial Lion: " + lion1.toString());
+
+        // Testing eating methods with Food enum
+        liontest.eatMeat(Food.MEAT);        // Lion eats meat
+        liontest.eatPlant(Food.PLANT);      // Lion eats plants
+        liontest.eatPlantAndMeat(Food.BOTH); // Lion eats both meat and plants
+
+        System.out.println("le penguin aquatic: " + penguin1.toString());
+        penguin1.eatMeat(Food.MEAT);
     }
-}
+    }
