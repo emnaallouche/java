@@ -24,4 +24,8 @@ public class Dolphin extends Aquatic {
                 ", isMammal=" + isMammal +
                 '}';
     }
+    @Override
+    public void eatMeat(Aquatic meat) {
+
+    }
 }
