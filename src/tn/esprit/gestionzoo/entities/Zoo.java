@@ -4,8 +4,13 @@ public class Zoo {
     private Animal[] animals;
     private String name;
     private String city;
-    private int NBR_CAGES;
+    private int nbrCages = 3;
+    private int animalCount = 0;
     private int nbrAnimals = 0;
+    private int nbrAquatic = 0;
+    private Aquatic aquaticAnimals[];
+
+
 
     public Animal[] getAnimals() {
         return animals;
@@ -34,14 +39,21 @@ public class Zoo {
         this.city = city;
     }
 
-    public int getNBR_CAGES() {
-        return NBR_CAGES;
+    public int getnbrCages() {
+        return nbrCages;
     }
 
-    public void setNBR_CAGES(int NBR_CAGES) {
-        this.NBR_CAGES = NBR_CAGES;
-        this.animals = new Animal[NBR_CAGES];
+    public void setnbrCages(int nbrCages) {
+        this.nbrCages = nbrCages;
+        this.animals = new Animal[nbrCages];
     }
+    public void setAnimalCount(int animalCount) {
+       this.animalCount=animalCount;
+    }
+    public int getAnimalCount() {
+        return animalCount;
+    }
+
 
     public int getNbrAnimals() {
         return nbrAnimals;
@@ -54,19 +66,38 @@ public class Zoo {
     public Zoo(String name, String city) {
         setName(name);
         this.city = city;
-        this.animals = new Animal[NBR_CAGES];
+        this.animals = new Animal[nbrCages];
+        this.aquaticAnimals = new Aquatic[10];
+    }
+    public void addAquaticAnimal(Aquatic aquatic){
+        if (nbrAquatic>10) {
+            System.out.println("max 10 animal aquatic.");
+        }
+        else{
+        aquaticAnimals[nbrAquatic] = aquatic;
+        nbrAquatic++;
+
+    }
     }
 
-    public boolean addAnimal(Animal animal) {
-        if (isZooFull()) {
-            System.out.println("Cannot add animal. The zoo is full.");
-            return false;
+
+
+    public void addAnimal(Animal animal) throws InvalidAgeException {
+        // Vérification de l'âge de l'animal
+        if (animal.getAge() < 0) {
+            throw new InvalidAgeException("L'âge de l'animal ne peut pas être négatif : " + animal.getAge());
         }
 
-        animals[nbrAnimals] = animal;
-        nbrAnimals++;
-        return true;
+        // Ajouter l'animal si l'âge est valide
+        if (animalCount < animals.length) {
+            animals[animalCount] = animal;
+            animalCount++;
+            System.out.println("L'animal " + animal.getName() + " a été ajouté au zoo.");
+        } else {
+            System.out.println("Le zoo est plein, impossible d'ajouter un autre animal.");
+        }
     }
+
 
     public void displayAnimals() {
         for (Animal animal : animals) {
@@ -97,7 +128,7 @@ public class Zoo {
     }
 
     public boolean isZooFull() {
-        return nbrAnimals >= NBR_CAGES;
+        return nbrAnimals >= nbrCages;
     }
 
     Zoo comparerZoo(Zoo z1, Zoo z2) {
@@ -108,6 +139,27 @@ public class Zoo {
     }
 
     public void displayZoo() {
-        System.out.println("Zoo Name: " + name + ", City: " + city + ", Number of Cages: " + NBR_CAGES);
+        System.out.println("Zoo Name: " + name + ", City: " + city + ", Number of Cages: " + nbrCages);
+    }
+    public void displayAquaticSwims() {
+        for (Aquatic aquatic : aquaticAnimals) {
+            if (aquatic != null) {
+                aquatic.swim();
+            }
+        }
+    }
+
+    public void displayNumberOfAquaticsByType() {
+        int dolphinCount = 0;
+        int penguinCount = 0;
+        for (Aquatic aquatic : aquaticAnimals) {
+            if (aquatic instanceof Dolphin) {
+                dolphinCount++;
+            } else if (aquatic instanceof Penguin) {
+                penguinCount++;
+            }
+        }
+        System.out.println("Nombre de dauphins: " + dolphinCount);
+        System.out.println("Nombre de pingouins: " + penguinCount);
     }
 }
