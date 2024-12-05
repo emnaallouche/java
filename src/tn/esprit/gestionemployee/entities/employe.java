@@ -2,16 +2,17 @@ package tn.esprit.gestionemployee.entities;
 
 import java.util.Objects;
 
-public class employe {
-    int id;
-    String nom;
-    String prenom;
-    String nomDepartement;
-    int grade;
+public class employe implements Comparable<employe> {
+    private int id;
+    private String nom;
+    private String prenom;
+    private String nomDepartement;
+    private int grade;
 
-    public employe() {
-    }
+    // Constructeur par défaut
+    public employe() {}
 
+    // Constructeur avec paramètres
     public employe(int id, String nom, String prenom, String nomDepartement, int grade) {
         this.id = id;
         this.nom = nom;
@@ -20,6 +21,7 @@ public class employe {
         this.grade = grade;
     }
 
+    // Getters et Setters
     public String getNom() {
         return nom;
     }
@@ -62,12 +64,15 @@ public class employe {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (o == null)
-            return false;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         employe employe = (employe) o;
         return id == employe.id && Objects.equals(nom, employe.nom);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nom);
     }
 
     @Override
@@ -79,5 +84,10 @@ public class employe {
                 ", nomDepartement='" + nomDepartement + '\'' +
                 ", grade=" + grade +
                 '}';
+    }
+
+    @Override
+    public int compareTo(employe other) {
+        return Integer.compare(this.id, other.id); // Comparaison par ID
     }
 }

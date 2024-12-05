@@ -63,6 +63,34 @@ public class empmain {
         TreeSet<département> departementsTries = gestionDepartements.trierDepartementById();
         for (département d : departementsTries) {
             System.out.println(d);
+
+
+            AffectationHashMap affectation = new AffectationHashMap();
+
+            // Création des employés et des départements
+            employe emp11 = new employe(1, "Alice", "Dupont", "IT", 3);
+            employe emp22 = new employe(2, "Bob", "Martin", "HR", 2);
+            département dep11 = new département(1, "IT", 10);
+            département dep22 = new département(2, "HR", 5);
+
+            // Ajout des affectations
+            affectation.ajouterEmployeDepartement(emp11, dep11);
+            affectation.ajouterEmployeDepartement(emp22, dep22);
+
+            // Essai d'ajouter le même employé à un autre département
+            affectation.ajouterEmployeDepartement(emp11, dep22);
+
+            // Affichage des employés et des départements
+            affectation.afficherEmployesEtDepartements();
+
+            // Suppression d'un employé
+            affectation.supprimerEmploye(emp11);
+            affectation.afficherEmployesEtDepartements();
+
+            // Affichage des employés et départements restants
+            affectation.afficherEmployes();
+            affectation.afficherDepartements();
         }
+
     }
 }
