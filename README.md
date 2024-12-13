@@ -22,7 +22,7 @@ crée par : Emna Allouche
 src/ : Code source Java.
 prosit/ : Travaux pratiques organisés par chapitres.
 
-prodit1
+prosit1
 https://github.com/emnaallouche/java/tree/prosit1
 
 
