@@ -1,8 +1,8 @@
-# Projet Java - Conception Orientée Objet
+# Projet Java
 
 ## Description
-Ce repository contient les travaux pratiques réalisés durant le module **Conception Orientée Objet et Programmation Java** (COOPJ). Il couvre les concepts fondamentaux de la programmation orientée objet en Java.
-
+Ce repository contient les travaux pratiques réalisés durant le module **Conception Orientée Objet et Programmation Java***
+crée par : Emna Allouche
 ## Prérequis
 - **Java JDK** (version 8 ou supérieure)
 - **IntelliJ IDEA** 
@@ -17,27 +17,9 @@ Ce repository contient les travaux pratiques réalisés durant le module **Conce
 
 3. **Configurer le JDK dans IntelliJ** :
    - Ouvrir IntelliJ > `File` > `Project Structure` > `Project` et sélectionner le JDK installé.
-
-## Compilation et Exécution
-
-1. **Cloner le repository** :
-   ```bash
-   git clone https://github.com/emnaallouche/java.git
-   cd java
-   
-2. **Ouvrir le projet** :
-Démarrer IntelliJ IDEA et choisir Open, puis sélectionner le dossier cloné.
-
-3. **Compiler et exécuter** :
-Pour compiler, utilisez Build > Build Project.
-Pour exécuter, faites un clic droit sur le fichier principal et sélectionnez Run.
-
 4. **Structure du Projet**:
 src/ : Code source Java.
 prosit/ : Travaux pratiques organisés par chapitres.
-
-5. **Contribuer**:
-Pour contribuer, veuillez forker le repository, créer une branche, apporter vos modifications et soumettre une Pull Request.
 
 ## Références
 Documentation Java
