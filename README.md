@@ -1,7 +1,8 @@
 # Projet Java
 
 ## Description
-Ce repository contient les travaux pratiques réalisés durant le module **Conception Orientée Objet et Programmation Java***
+Ce repository contient les travaux pratiques réalisés durant le module **Conception Orientée Objet et Programmation Java**
+
 crée par : Emna Allouche
 ## Prérequis
 - **Java JDK** (version 8 ou supérieure)
